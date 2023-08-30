@@ -1,9 +1,14 @@
 import Items  from "../../components/Items/items"
 import { Datas as products } from "../../data"
-import { useContext } from "react"
+import { useContext,createContext } from "react"
 import { AppContext } from "../homePage/homePage"
+const ItemContext=createContext(null)
+
 export const ItemsPage = () => {
-    let {handleAddItem,}=useContext(AppContext)
+    let { handleAddItem, } = useContext(AppContext)
+    const itemLength = products.length;
+    
+    console.log(itemLength)
     return (
         <div className="p-1">
             {products.map(product => (

@@ -5,7 +5,7 @@ export const CartItems = () => {
     let { activeTab,handleRemoveItem } = useContext(AppContext)
     
     return (
-        <div className="p-1">
+        <div className="p-1 ">
             {
                 activeTab.cart.map(product => (
                     
