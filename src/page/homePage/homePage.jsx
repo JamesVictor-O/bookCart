@@ -7,25 +7,36 @@ import { CartItems } from "../cartItem/cartItems";
  export const AppContext=createContext(null)
 
 export function HomePage() {
-    let [activeTab, setActiveTab] = useState({
+
+    let [activeTab, setActiveTab] = useState(JSON.parse(localStorage.getItem("database")) || {
         status: true,
         cart:[]
     })
+    const[isActive, setIsActive]=useState(true)
+
     
     const handleTabChange = (index) => {
-        setActiveTab({...activeTab, status: index })
-    }
-    const handleAddItem = (item) => {
-        setActiveTab({ ...activeTab, cart: [...activeTab.cart, item] })
+        setActiveTab({ ...activeTab, status: index })
         
     }
-    const handleRemoveItem = () => {
-        console.log("remove")
-    }
+    const handleAddItem = (item) => {
+        setActiveTab({ ...activeTab, cart: [...activeTab.cart, item,isActive]})
+        localStorage.setItem("database", JSON.stringify(activeTab))
 
+    }
+    const handleRemoveItem = (item) => {
+        let itemId = item.id;
+            
+        const newItems= activeTab.cart.filter(item => {
+                return item.id !== itemId
+        })
+            
+        setActiveTab({ ...activeTab, cart: [...newItems] })
+        
+    }
     return (
-    <div className="bg-blue-200 w-[50%] h-screen m-4 rounded-lg overflow-hidden">
-            <AppContext.Provider value={{handleAddItem , setActiveTab, activeTab, handleTabChange,handleRemoveItem}}>
+    <div className="bg-blue-200 md:w-[50%] h-screen m-4 rounded-lg overflow-hidden">
+             <AppContext.Provider value={{handleAddItem , setActiveTab, activeTab, handleTabChange,handleRemoveItem}}>
                  <NavBar/>
                 <main>
                     {activeTab.status ? <ItemsPage /> : <CartItems/>}   

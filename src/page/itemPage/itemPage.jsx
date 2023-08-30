@@ -3,7 +3,7 @@ import { Datas as products } from "../../data"
 import { useContext } from "react"
 import { AppContext } from "../homePage/homePage"
 export const ItemsPage = () => {
-    let {handleAddItem}=useContext(AppContext)
+    let {handleAddItem,}=useContext(AppContext)
     return (
         <div className="p-1">
             {products.map(product => (
@@ -14,6 +14,7 @@ export const ItemsPage = () => {
                     price={product.price}
                     disc={product.dis}
                     handleAddItem={()=> handleAddItem(product)}
+                   
                 />
            ))}
         </div>

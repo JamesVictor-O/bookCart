@@ -4,14 +4,14 @@ export const Datas = [
         name: "The four hour work week",
         price: 230,
         img: "../src/assets/4-Hours-Work-Week.jpg",
-        dis:"comfortable,afordable to any every one, no matter your size and hight"
+        dis:"increase your productivity"
     },
     {
         id:2,
         name: "build don't talk",
         price: 130,
         img: "../src/assets/Build-Don't-Talk.jpg",
-        dis:"comfortable,afordable to any every one, no matter your size and hight"
+        dis:"booste your work etics"
     },
     {
         id:3,

@@ -5,7 +5,7 @@ import { HomePage } from './page/homePage/homePage';
 
 function App() {
   return (
-    <div className='flex justify-center items-center'>
+    <div className='flex md:justify-center items-center'>
        <HomePage/>
     </div>
    )
