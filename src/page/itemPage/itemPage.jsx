@@ -8,7 +8,6 @@ export const ItemsPage = () => {
     let { handleAddItem, } = useContext(AppContext)
     const itemLength = products.length;
     
-    console.log(itemLength)
     return (
         <div className="p-1">
             {products.map(product => (

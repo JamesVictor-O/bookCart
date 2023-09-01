@@ -7,17 +7,20 @@ export const CartItems = () => {
     return (
         <div className="p-1 ">
             {
-                activeTab.cart.map(product => (
+                activeTab.cart.map(product => {
                     
-                    <Items
-                    key={product.id}
-                    img={product.img}
-                    name={product.name}
-                    price={product.price}
-                    disc={product.dis}
-                    handleRemoveItem={()=> handleRemoveItem(product)}
-                    />
-                )
+                    return(
+                        <Items
+                            key={product.id}
+                            img={product.img}
+                            name={product.name}
+                            price={product.price}
+                            disc={product.dis}
+                            handleRemoveItem={() => handleRemoveItem(product)}
+                        />
+                
+                    )
+                }
                 )
             }
         </div>
