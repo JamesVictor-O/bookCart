@@ -39,7 +39,8 @@ export default function Items({ price, img, name, disc, handleAddItem, handleRem
                     <CustomButton handler={handleAddItem} isAddedToCart={isAddedToCart} >
                         Add to cart
                     </CustomButton> :
-                    <CartButton  handlePriceIncrease={handlePriceIncrease} handlePriceDecrease={handlePriceDecrease} numberOfitems={ numberOfitems} />}
+                    <CartButton handlePriceIncrease={handlePriceIncrease} handlePriceDecrease={handlePriceDecrease} numberOfitems={numberOfitems} />
+                }
         </div>
     </div>
         
